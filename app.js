@@ -4,6 +4,7 @@ import Router from "./services/Router.js";
 
 // Web Components
 import { MenuPage } from "./components/MenuPage.js";
+import { OrderPage } from "./components/OrderPage.js";
 
 window.app = {
   store: Store,
