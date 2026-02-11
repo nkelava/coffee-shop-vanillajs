@@ -31,30 +31,29 @@ const Router = {
 
     switch (route) {
       case "/":
-        pageElement = document.createElement("h1");
-        pageElement.textContent = "Menu";
+        pageElement = document.createElement("menu-page");
         break;
       case "/order":
-        pageElement = document.createElement("h1");
+        pageElement = document.createElement("order-page");
         pageElement.textContent = "Your Order";
         break;
       default:
         if (route.startsWith("/product/")) {
-          pageElement = document.createElement("h1");
+          pageElement = document.createElement("details-page");
           pageElement.textContent = "Details";
         }
     }
+
+    if (pageElement) {
+      const mainElement = document.querySelector("main");
+
+      mainElement?.children[0]?.remove();
+      mainElement.appendChild(pageElement);
+
+      window.scrollX = 0;
+      window.scrollY = 0;
+    }
   },
 };
-
-if (pageElement) {
-  const mainElement = document.querySelector("main");
-
-  mainElement?.children[0]?.remove();
-  mainElement.appendChild(pageElement);
-
-  window.scrollX = 0;
-  window.scrollY = 0;
-}
 
 export default Router;
