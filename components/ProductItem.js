@@ -18,7 +18,7 @@ export default class ProductItem extends HTMLElement {
       if (event.target.tagName.toLowerCase() == "button") {
         //TODO
       } else {
-        app.router.go(`/product-${product.id}`);
+        app.router.go(`/product/${product.id}`);
       }
       event.preventDefault();
     });
