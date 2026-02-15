@@ -52,6 +52,9 @@ const Router = {
 
       window.scrollX = 0;
       window.scrollY = 0;
+    } else {
+      const mainElement = document.querySelector("main");
+      mainElement.innerHTML = "Oops, 404!";
     }
   },
 };
